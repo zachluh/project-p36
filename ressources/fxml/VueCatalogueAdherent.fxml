@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="1206.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CatalogueController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="-3.0" prefHeight="54.0" prefWidth="912.0" spacing="20.0">
+         <children>
+            <Label text="Recherche par" />
+            <RadioButton fx:id="btnAuteurRealisateur" onAction="#handleChangementFiltre" mnemonicParsing="false" text="auteur/realisateur"/>
+            <RadioButton fx:id="btnMotsCles" onAction="#handleChangementFiltre" mnemonicParsing="false" text="mots clés"/>
+            <TextField fx:id="rechercheMotsCles" onKeyReleased="#handleRechercheMotsCles" />
+            <Button fx:id="effacerMotsCles" mnemonicParsing="false" onAction="#handleEffacerMotsCles" prefHeight="25.0" prefWidth="141.0" text="Effacer" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+      <TabPane layoutY="54.0" prefHeight="476.0" prefWidth="912.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Tous les documents">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="321.0" prefWidth="883.0">
+                     <children>
+                        <TableView fx:id="tableTout" prefHeight="450.0" prefWidth="912.0">
+                          <columns>
+                            <TableColumn fx:id="tTNoDocument" prefWidth="134.0" text="Numéro du document" />
+                            <TableColumn fx:id="tTTitre" prefWidth="161.0" text="Titre" />
+                              <TableColumn fx:id="tTAuteur" prefWidth="147.0" text="Auteur/Réalisateur" />
+                              <TableColumn fx:id="tTDate" prefWidth="123.0" text="Date de parution" />
+                              <TableColumn fx:id="tTÉtat" prefWidth="68.0" text="État" />
+                              <TableColumn fx:id="tTNbPrêts" prefWidth="105.0" text="Nb Prêts" />
+                              <TableColumn fx:id="tTEmprunteur" prefWidth="173.0" text="Emprunteur" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Livres">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableLivres" layoutY="-1.0" prefHeight="451.0" prefWidth="912.0">
+                          <columns>
+                            <TableColumn fx:id="tLNoDocument" prefWidth="134.0" text="Numéro du document" />
+                            <TableColumn fx:id="tLTitre" prefWidth="161.0" text="Titre" />
+                              <TableColumn fx:id="tLAuteur" prefWidth="147.0" text="Auteur" />
+                              <TableColumn fx:id="tLDate" prefWidth="123.0" text="Date de parution" />
+                              <TableColumn fx:id="tLÉtat" prefWidth="68.0" text="État" />
+                              <TableColumn fx:id="tLNbPrêts" prefWidth="105.0" text="Nb Prêts" />
+                              <TableColumn fx:id="tLEmprunteur" prefWidth="173.0" text="Emprunteur" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Périodiques">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tablePeriodiques" prefHeight="450.0" prefWidth="912.0">
+                          <columns>
+                            <TableColumn fx:id="tPNoDocument" prefWidth="131.0" text="Numéro du document" />
+                            <TableColumn fx:id="tPTitre" prefWidth="132.0" text="Titre" />
+                              <TableColumn fx:id="tPDate" prefWidth="102.0" text="Date de parution" />
+                              <TableColumn fx:id="tPNbVolumes" prefWidth="127.0" text="Numéro de Volume" />
+                              <TableColumn fx:id="tPNbPeriodique" prefWidth="133.0" text="Numéro de périodique" />
+                              <TableColumn fx:id="tPÉtat" text="État" />
+                              <TableColumn fx:id="tPNbPrêts" prefWidth="100.0" text="Nb Prêts" />
+                              <TableColumn fx:id="tPEmprunteur" prefWidth="106.0" text="Emprunteurs" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="DVDs">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableDVD" layoutY="-2.0" prefHeight="452.0" prefWidth="912.0">
+                          <columns>
+                            <TableColumn fx:id="tDNoDocument" prefWidth="144.0" text="Numéro du document" />
+                            <TableColumn fx:id="tDTitre" prefWidth="107.0" text="Titre" />
+                              <TableColumn fx:id="tDAuteur" prefWidth="92.0" text="Réalisateur" />
+                              <TableColumn fx:id="tDDate" prefWidth="135.0" text="Date de parution" />
+                              <TableColumn fx:id="tDNbDisques" prefWidth="117.0" text="Nombre de disques" />
+                              <TableColumn fx:id="tDÉtat" prefWidth="125.0" text="État" />
+                              <TableColumn fx:id="tDNbPrêts" prefWidth="53.0" text="Nb Prêts" />
+                              <TableColumn fx:id="tDEmprunteur" prefWidth="138.0" text="Emprunteurs" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <VBox alignment="TOP_CENTER" layoutX="912.0" layoutY="-4.0" prefHeight="539.0" prefWidth="295.0" spacing="15.0">
+         <padding>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-style: SOLID; -fx-border-radius: 4;">
+               <children>
+                  <VBox prefHeight="153.0" prefWidth="141.0" spacing="40.0">
+                     <children>
+                        <Label text="Identification par" />
+                        <Label fx:id="label1" layoutX="20.0" layoutY="20.0" text="Nom:" />
+                        <Label fx:id="label2" layoutX="20.0" layoutY="77.0" text="Prénom:" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="134.0" prefHeight="153.0" prefWidth="141.0" spacing="15.0">
+                     <children>
+                        <VBox prefHeight="50.0" prefWidth="141.0">
+                           <children>
+                              <RadioButton fx:id="nomPrenomRadioButton" mnemonicParsing="false" text="nom et prénom">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="telephoneRadioButton" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" text="téléphone">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <TextField fx:id="textField1" />
+                        <TextField fx:id="textField2" layoutX="20.0" layoutY="75.0">
+                           <VBox.margin>
+                              <Insets top="16.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER" layoutY="163.0" prefHeight="32.0" prefWidth="277.0">
+                     <children>
+                        <Button fx:id="btnConsulterDossier" onAction="#handleBtnConsulterDossier" mnemonicParsing="false" text="Consulter mon dossier" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnQuitter" onAction="#handleBtnQuitter" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Quitter" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

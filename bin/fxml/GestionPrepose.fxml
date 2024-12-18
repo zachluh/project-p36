@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GestionPreposeController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="912.0" layoutY="-4.0" prefHeight="534.0" prefWidth="166.0" spacing="15.0">
+         <children>
+            <Accordion fx:id="accordionAdmin">
+              <panes>
+                <TitledPane fx:id="titledPanePreposes" animated="false" text="Gestion préposés">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="90.0" prefWidth="164.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" layoutY="-1.0" prefHeight="100.0" prefWidth="166.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btnAjouterPrepose" onAction="#handleBtnAjouterPrepose" mnemonicParsing="false" text="Ajouter un préposé" />
+                                    <Button fx:id="btnSupprimerPrepose" onAction="#handleBtnSupprimerPrepose" layoutX="67.0" layoutY="70.0" mnemonicParsing="false" text="Supprimer un préposé" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <Button fx:id="btnQuitter" onAction="#handleBtnQuitter" mnemonicParsing="false" text="Déconnexion" />
+         </children>
+      </VBox>
+      <TableView fx:id="tablePreposes" prefHeight="528.0" prefWidth="914.0">
+        <columns>
+          <TableColumn fx:id="colNumPrepose" prefWidth="142.0" text="Numéro d'employé" />
+          <TableColumn fx:id="colNom" prefWidth="216.0" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="192.0" text="Prénom" />
+            <TableColumn fx:id="colAddresse" prefWidth="208.0" text="Addresse" />
+            <TableColumn fx:id="colTelephone" prefWidth="155.0" text="Téléphone" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

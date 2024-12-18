@@ -1,0 +1,9 @@
+Compte administrateur:
+
+Num Employé: admin
+Password: admin
+
+Si l'application ne launch pas pour raison quelconque, essayez de supprimer les fichiers ser dans donnees_ser
+
+
+Merci :)

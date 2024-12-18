@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GestionAdherentController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="912.0" layoutY="-4.0" prefHeight="534.0" prefWidth="166.0" spacing="15.0">
+         <children>
+            <Accordion fx:id="accordionPrepose">
+              <panes>
+                <TitledPane fx:id="titledPaneGestionCatalogue" animated="false" prefHeight="150.0" prefWidth="166.0" text="Gestion catalogue">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="164.0">
+                           <children>
+                              <Button layoutX="17.0" layoutY="33.0" mnemonicParsing="false" text="Ajouter un document" />
+                              <Button layoutX="8.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Supprimer un document" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="titledPaneGestionAdherents" animated="false" text="Gestion adhérents">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" layoutY="-1.0" prefHeight="158.0" prefWidth="166.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btnAjouterAdherent" onAction="#handleBtnAjouterAdherent" mnemonicParsing="false" text="Ajouter un adhérent" />
+                                    <Button fx:id="btnModifierAdherent" onAction="#handleBtnModifierAdherent" layoutX="67.0" layoutY="35.0" mnemonicParsing="false" text="Modifier un adhérent" />
+                                    <Button fx:id="btnSupprimerAdherent" onAction="#handleBtnSupprimerAdherent" layoutX="67.0" layoutY="70.0" mnemonicParsing="false" text="Supprimer un adhérent" />
+                                    <Button fx:id="btnPayerSolde" onAction="#handleBtnPayerSolde" layoutX="67.0" layoutY="105.0" mnemonicParsing="false" text="Payer un solde" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="titledPaneGestionPrets" animated="false" text="Gestion prêts">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <Button fx:id="btnQuitter" onAction="#handleBtnQuitter" mnemonicParsing="false" text="Déconnexion" />
+         </children>
+      </VBox>
+      <TableView fx:id="tableAdherents" prefHeight="528.0" prefWidth="914.0">
+        <columns>
+          <TableColumn fx:id="colNumAdherent" prefWidth="142.0" text="Numéro d'adhérent" />
+          <TableColumn fx:id="colNom" prefWidth="131.0" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="142.0" text="Prénom" />
+            <TableColumn fx:id="colAddresse" prefWidth="224.0" text="Addresse" />
+            <TableColumn fx:id="colTelephone" prefWidth="111.0" text="Téléphone" />
+            <TableColumn fx:id="colPrets" prefWidth="84.0" text="Prêts actifs" />
+            <TableColumn fx:id="colSolde"  prefWidth="79.0" text="Solde dû" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
